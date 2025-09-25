@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pink_200">#f48fb1</color>  <!-- Lighter pink -->
+    <color name="pink_500">#e4097e</color>  <!-- Base pink -->
+    <color name="pink_700">#ad1457</color>  <!-- Darker pink -->
+
+    <color name="blue_200">#7986cb</color>  <!-- Lighter blue -->
+    <color name="blue_500">#3c5997</color>  <!-- Base blue -->
+    <color name="blue_700">#283593</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="pink_bg_circle">#68EF74B6</color>
+    <color name="pink_bg_reg">#68F8DDEB</color>
+    <color name="red_napid">#ff0000</color>
+    <color name="id_disabled">#31000000</color>
+    <color name="napid_white">#FFFFFF</color>
+    <color name="napid_grey">#C5C5C5</color>
+    <color name="blue_bg_reg">#e2f1ff</color>
+    <color name="gold">#f89400</color>
+</resources>

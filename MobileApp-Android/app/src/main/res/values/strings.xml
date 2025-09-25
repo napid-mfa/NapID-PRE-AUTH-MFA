@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BOBdemo</string>
+    <string name="reg_str">Secure with</string>
+    <string name="reg_shield">Anti-fraud shield</string>
+    <string name="reg_str1">Select Mobile Number Linked \n To Your Bank</string>
+    <string name="reg_str2">To confirm mobile number, We need to send \n an SMS from your mobile</string>
+    <string name="reg_str3">Note that:</string>
+    <string name="reg_str4">In order to able to send and receive money instantly, you have to complete the registration process by sending an SMS to verify your mobile number.</string>
+    <string name="reg_btn">Send SMS</string>
+    <string name="reg_dialog_str">Registration in progress …</string>
+    <string name="suc_str1">Success</string>
+    <string name="suc_str2">Your registration was successful.</string>
+    <string name="suc_btn">Continue</string>
+    <string name="securedby"> Secured by napID</string>
+    <string name="home_touch_str">Touch To \n Use</string>
+    <string name="reg_fail_str">Registration Failed</string>
+    <string name="reg_fail_rsn">Please reach bank\'s customer support</string>
+    <string name="biometric_enable">Kindly enable authentication in settings of your phone.To proceed further.</string>
+    <string name="biometric_settings"><u>Settings</u></string>
+    <string name="dialog_optout_header">Are you sure?</string>
+    <string name="dialog_optout_body">You wanted to unsecure your id.</string>
+    <string name="dialog_optout_btn_secure">Be secured.</string>
+    <string name="dialog_optout_btn_unsecure"><u>Unsecure</u></string>
+    <string name="dialog_optin_header">We are securing your id</string>
+    <string name="dialog_optin_btn_cont">Continue</string>
+    <string name="id_secure_it_now">Secure it \n Now</string>
+    <string name="userconsent">Make your Net Banking, UPI &amp; Card transactions fraud proof</string>
+    <string name="id_use_it_now">You can use this id now</string>
+    <string name="card_use_it_now">You can use this card now</string>
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacer_10">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/id_background_awake"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_10"
+            android:paddingLeft="@dimen/padding_10"
+            android:paddingStart="@dimen/padding_10"
+            android:paddingEnd="@dimen/padding_10"
+            android:paddingRight="@dimen/padding_10"
+            android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/napid_white"
+                android:textStyle="bold"
+                android:id="@+id/card_txt"
+                android:visibility="visible"
+                android:textSize="@dimen/text_size_medium"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacer_20"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ma****ni"
+                android:maxLines="2"
+                android:textSize="@dimen/id_text_size"
+                android:id="@+id/digital_id_name"
+                android:textColor="@color/napid_white"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:visibility="visible"
+            android:id="@+id/id_timer"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/shutdown_img"
+                android:layout_height="@dimen/shutdown_img"
+                android:src="@drawable/shutdown"
+                android:layout_gravity="end"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacer_10"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/timer_text_size"
+                android:gravity="center"
+                android:importantForAccessibility="no"
+                android:includeFontPadding="false"
+                android:textStyle="bold"
+                android:id="@+id/timer"
+                android:textColor="#FFF"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacer_20"/>
+
+        </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/secureit_lnr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/id_use"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/padding_10"
+            android:paddingTop="@dimen/padding_5"
+            android:paddingEnd="@dimen/padding_10"
+            android:paddingBottom="@dimen/padding_5"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/secured_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/padding_5"
+                android:layout_weight="1"
+                android:text="@string/id_use_it_now"
+                android:textColor="@color/red_napid"
+                android:textSize="@dimen/text_size_small" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/id_card_progress_background"
+        android:visibility="gone"
+        android:id="@+id/progress_lnr">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_progress"/>
+    </LinearLayout>
+    </FrameLayout>
+</layout>

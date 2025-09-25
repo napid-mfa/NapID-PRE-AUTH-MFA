@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--Text Sizes-->
+    <dimen name="text_size_verylarge">22sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_verysmall">12sp</dimen>
+
+    <!--HeaderMargin-->
+    <dimen name="header_top_margin">50sp</dimen>
+
+    <!--Logo-->
+    <dimen name="logo_height">50sp</dimen>
+    <dimen name="logo_width">50sp</dimen>
+
+    <!--Simbox-->
+    <dimen name="sim_width">100sp</dimen>
+
+    <!--sendSMS Button-->
+    <dimen name="button_width">200sp</dimen>
+    <dimen name="button_widthmax">300sp</dimen>
+    <!--padding-->
+    <dimen name="padding_5">5sp</dimen>
+    <dimen name="padding_10">10sp</dimen>
+    <dimen name="padding_12">12sp</dimen>
+    <dimen name="padding_20">20sp</dimen>
+    <dimen name="padding_25">25sp</dimen>
+    <dimen name="padding_30">30sp</dimen>
+    <dimen name="padding_40">40sp</dimen>
+    <dimen name="padding_60">60sp</dimen>
+    <dimen name="padding_80">80sp</dimen>
+
+    <!--spacer-->
+    <dimen name="spacer_10">10sp</dimen>
+    <dimen name="spacer_20">20sp</dimen>
+    <dimen name="spacer_30">30sp</dimen>
+    <dimen name="spacer_40">40sp</dimen>
+    <dimen name="spacer_45">45sp</dimen>
+    <dimen name="spacer_50">50sp</dimen>
+    <dimen name="spacer_80">80sp</dimen>
+
+    <!--Bottom Sheet Dialog-->
+    <dimen name="dialog_height">400sp</dimen>
+
+    <!--Background shape drawable-->
+    <dimen name="shape">50sp</dimen>
+
+    <!--Tick Image Size-->
+    <dimen name="tick_height">200sp</dimen>
+    <dimen name="tick_width">200sp</dimen>
+
+    <!--List-->
+    <dimen name="list_height">260sp</dimen>
+    <dimen name="vendor_height">40sp</dimen>
+    <dimen name="chip_size">20sp</dimen>
+    <dimen name="id_text_size">18sp</dimen>
+    <dimen name="secured_logo_size">20sp</dimen>
+    <dimen name="fingerprint_img_size">60sp</dimen>
+    <dimen name="shutdown_img">30sp</dimen>
+    <dimen name="timer_text_size">42sp</dimen>
+    <dimen name="highrisk_img_size">100sp</dimen>
+</resources>

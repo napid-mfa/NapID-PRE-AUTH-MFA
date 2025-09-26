@@ -63,18 +63,7 @@
 
 
                     <!-- Second icon aligned to the right -->
-                    <ImageView
-                        android:id="@+id/alerticon"
-                        android:layout_width="@dimen/secured_logo_size"
-                        android:layout_height="@dimen/secured_logo_size"
-                        android:contentDescription="Icon 2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginRight="@dimen/spacer_20"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:src="@drawable/danger"
-                        android:tint="@color/white"
-                        app:layout_constraintVertical_bias="0.5" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>

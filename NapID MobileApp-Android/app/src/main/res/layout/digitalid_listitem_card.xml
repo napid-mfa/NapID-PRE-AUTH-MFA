@@ -175,21 +175,7 @@
                     android:textColor="@color/napid_white"
                     />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/opt_out_lnr"
-                    android:layout_weight="1"
-                    android:gravity="end">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Opt out"
-                        android:textColor="@color/napid_grey"
-                        android:textSize="@dimen/text_size_verysmall"
-                        android:id="@+id/opt_out"/>
 
-                </LinearLayout>
 
 
             </LinearLayout>

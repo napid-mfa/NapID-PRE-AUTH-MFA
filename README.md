@@ -4,6 +4,14 @@
 ### 📺 Watch on YouTube
 [![Watch on YouTube](https://img.youtube.com/vi/sYaYrUfMWAY/maxresdefault.jpg)](https://youtu.be/sYaYrUfMWAY)
 
+## 🎥 Demo Video Links
+
+YouTube:  
+https://www.youtube.com/watch?v=sYaYrUfMWAY  
+
+Loom:  
+https://www.loom.com/share/08f95b06751d4898abd014d78e6d175f?sid=1e3789bd-8124-48cb-b5f9-cd95d3bc5bc4
+
 ## ⚙️ Configuration Changes
 
 To run the NapID Pre-Auth MFA demo, update the following files with the **backend base URL**:
@@ -38,9 +46,6 @@ To run the NapID Pre-Auth MFA demo, update the following files with the **backen
 
 ---
 
-## 🎥 Demo Video Link
 
-Youtube: https://www.youtube.com/watch?v=sYaYrUfMWAY
-Loom: https://www.loom.com/share/08f95b06751d4898abd014d78e6d175f?sid=1e3789bd-8124-48cb-b5f9-cd95d3bc5bc4
 
 

@@ -197,11 +197,12 @@ const NapidPreAuthMFA = () => {
                                 width: '100%'
                             }}>
                                 <p style={{
-                                    color: 'white',
+                                    color: 'black',
                                     fontSize: '18px',
                                     fontWeight: 'bold',
                                     marginBottom: '20px',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    marginLeft: '50px',
                                 }}>NapID PRE-AUTH MFA</p>
                                 
                                 {!paymentSuccess && (

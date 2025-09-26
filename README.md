@@ -36,8 +36,4 @@ To run the NapID Pre-Auth MFA demo, update the following files with the **backen
 
 ## 🎥 Demo Video
 
-<p align="center">
-  <a href="https://www.loom.com/share/08f95b06751d4898abd014d78e6d175f?sid=1e3789bd-8124-48cb-b5f9-cd95d3bc5bc4">
-    <img src="https://cdn.loom.com/sessions/thumbnails/08f95b06751d4898abd014d78e6d175f-with-play.gif" alt="NapID Demo Video" width="600"/>
-  </a>
-</p>
+[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/08f95b06751d4898abd014d78e6d175f-with-play.gif)](https://www.loom.com/share/08f95b06751d4898abd014d78e6d175f?sid=1e3789bd-8124-48cb-b5f9-cd95d3bc5bc4)

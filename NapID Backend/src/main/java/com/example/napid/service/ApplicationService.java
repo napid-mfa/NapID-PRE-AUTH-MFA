@@ -1,6 +1,5 @@
 package com.example.napid.service;
 
-import com.example.napid.controller.ApplicationController;
 import com.example.napid.dto.*;
 import com.example.napid.entity.ApplicationDetailsEntity;
 import com.example.napid.exception.CommonException;

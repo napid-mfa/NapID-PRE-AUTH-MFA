@@ -1,7 +1,6 @@
 package com.example.napid.controller;
 
 import com.example.napid.dto.*;
-import com.example.napid.entity.ApplicationDetailsEntity;
 import com.example.napid.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -13,7 +13,7 @@ function Dashboard() {
     const applications = [
         {
             id: 1,
-            title: "NapId Pre-Auth MFA",
+            title: "NapID PRE-AUTH MFA",
             icon: <SafetyCertificateOutlined style={{ fontSize: 24 }} />,
             route: "/napid-preauth-mfa",
             gradient: "linear-gradient(135deg,rgb(253, 161, 41),  #f26522)",

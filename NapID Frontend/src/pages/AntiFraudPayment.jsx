@@ -77,7 +77,7 @@ const AntiFraudPayment = () => {
                 }, 1000);
             } else {
                 setIsIdSleeping(true)
-                setStatusMessage("Id is Sleep");
+                setStatusMessage("Id is in Sleep Mode");
                 setVerifed(false);
                 setStatusAwakeMessage('Awake & Recheck')
             }
@@ -156,7 +156,7 @@ const AntiFraudPayment = () => {
                                 NapID <br />Anti-Fraud Payment/Login
                             </Title>
                             <Title
-                                level={2}
+                                level={3}
                                 style={{
                                     marginBottom: 16,
                                     marginTop: '-10px',
@@ -164,7 +164,7 @@ const AntiFraudPayment = () => {
                                     fontWeight: "bold",
                                 }}
                             >
-                                (As First Factor Authentication)
+                                (Acts As First Factor Authentication)
                             </Title>
                             <Paragraph
                                 style={{
@@ -302,7 +302,7 @@ const AntiFraudPayment = () => {
                                                         onChange={(e) => setUserId(e.target.value)}
                                                         disabled={verifed}
                                                         style={{
-                                                            backgroundColor: (verifed) ? "#bfbfbf" : "white",
+                                                            backgroundColor: (verifed) ? "#bfbfbf" : "white", borderColor: 'gray',
                                                         }}
                                                         placeholder="Enter your User Id"
                                                     />
@@ -314,7 +314,7 @@ const AntiFraudPayment = () => {
                                                             checked={checked}
                                                             onChange={handleCheckboxChange}
                                                         >
-                                                            <h5 size="small" style={{ color: 'red', margin: 0 }}>{statusMessage}</h5>
+                                                            <h4 size="small" style={{ color: 'red', margin: 0 }}>{statusMessage}</h4>
                                                         </Checkbox> : !isIdSleeping ?
                                                             <h5 style={{ color: 'green', margin: 0 }}>
                                                                 {statusMessage} <span style={{ marginLeft: '8px', color: 'red' }}>{timeCount}</span>
@@ -323,7 +323,7 @@ const AntiFraudPayment = () => {
                                                                 <h5 style={{ color: 'red', margin: '0 0 8px 0' }}>
                                                                     {statusMessage}
                                                                 </h5>
-                                                                {statusAwakeMessage && <h5 onClick={handleVerify} style={{ color: 'blue', margin: 0, cursor: 'pointer' }}>
+                                                                {statusAwakeMessage && <h5 onClick={handleVerify} style={{ color: 'blue', marginTop: '-10px', cursor: 'pointer', textDecoration: 'underline' }}>
                                                                     {statusAwakeMessage}
                                                                 </h5>}
                                                             </div>
@@ -332,12 +332,13 @@ const AntiFraudPayment = () => {
                                                 <Form.Item
                                                     label="Password"
                                                     name="password"
+                                                    style={{ marginTop: "8px" }}
 
                                                 >
                                                     <Input
                                                         disabled={!verifed}
                                                         style={{
-                                                            backgroundColor: (!verifed) ? "#bfbfbf" : "white",
+                                                            backgroundColor: (!verifed) ? "#bfbfbf" : "white", borderColor: 'gray',
                                                         }}
                                                         placeholder="Enter your password"
                                                     />

@@ -61,7 +61,7 @@ const NapidPreAuthMFA = () => {
                 }, 1000);
             } else {
                 setIsIdSleeping(true)
-                setStatusMessage("Number is Sleep, Awake");
+                setStatusMessage("Number is in Sleep Mode");
                 setVerifed(false);
             }
         } catch (error) {
@@ -135,7 +135,7 @@ const NapidPreAuthMFA = () => {
                                     fontWeight: "bold",
                                 }}
                             >
-                                NapID PRE-AUTH MFA (OTP Replacer)
+                                NapID PRE-AUTH MFA <b />(OTP Replacer)
                             </Title>
                             <Paragraph
                                 style={{
@@ -188,83 +188,96 @@ const NapidPreAuthMFA = () => {
                                 alignItems: "center",
                             }}
                         >
-                            {!paymentSuccess && (
-                                <Card
-                                    style={{
-                                        width: "65%",
-                                        height: "92%",
-                                        textAlign: "center",
-                                        margin: "0px 45px 0px auto",
-                                        borderRadius: 12,
-                                    }}
-                                >
-                                    <h2 style={{ color: "#162b75", marginTop: "-5px" }}>
-                                        AUTHENTICATE
-                                    </h2>
-                                    <h2 style={{ color: "#162b75", marginTop: "-23px" }}>
-                                        YOUR ACCOUNT
-                                    </h2>
-                                    <div style={{ margin: "20px 0" }}>
-                                        <img src={napidLogo} alt="shield" width={55} />
-                                        <Paragraph
-                                            strong
-                                            style={{
-                                                fontSize: 18,
-                                                marginTop: 10,
-                                                color: "#162b75",
-                                                marginBottom: 0,
-                                            }}
-                                        >
-                                            +91 xxxxxx9283
-
-                                        </Paragraph>
-                                        {!verifed && !isIdSleeping ? <Checkbox className="custom-checkbox"
-                                            style={{ marginTop: '-18px' }}
-                                            checked={checked}
-                                            onChange={handleCheckboxChange}
-                                        >
-                                            <h5 size="small" style={{ color: 'red' }}>{statusMessage}</h5>
-                                        </Checkbox> : !isIdSleeping ?
-                                            <h5 style={{ color: 'green', marginTop: '0px', marginLeft: '-25px' }}>
-                                                {statusMessage} <span style={{ marginLeft: '8px', color: 'red' }}>{timeCount}</span>
-                                            </h5> :
-                                            <><h5 style={{ color: 'red', marginTop: '0px', marginLeft: '-25px' }}>
-                                                {statusMessage}
-                                            </h5><h5 onClick={handleVerify
-                                            } style={{ color: 'blue', marginTop: '-20px', marginLeft: '-25px', cursor: 'pointer' }}>
-                                                    Awake & Recheck
-                                                </h5></>
-                                        }
-                                    </div>
-                                    <Button
-                                        type="primary"
-                                        onClick={() => {
-                                            setPaymentSuccess(true);
-                                            if (intervalRef.current) {
-                                                clearInterval(intervalRef.current);
-                                                intervalRef.current = null;
-                                            }
-                                            setChecked(false);
-                                            setVerifed(false);
-                                            setIsIdSleeping(false)
-                                            setStatusMessage("This is my number");
-                                            setTimeCount(30);
-                                        }}
-                                        shape="round"
-                                        style={{ width: "45%", fontSize: 18,fontWeight:'bold', marginTop: '-30px', backgroundColor: (!verifed) ? "#bfbfbf" : "#162b75" , color:(!verifed)?'#595959':"white"}}
-                                        size="middle"
-                                        disabled={!verifed}
-                                    >
-                                        Verify
-                                    </Button>
-                                </Card>
-                            )}
-                            {paymentSuccess && (
-                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '100%' }}>
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                height: '100%',
+                                width: '100%'
+                            }}>
+                                <p style={{
+                                    color: 'white',
+                                    fontSize: '18px',
+                                    fontWeight: 'bold',
+                                    marginBottom: '20px',
+                                    textAlign: 'center'
+                                }}>NapID PRE-AUTH MFA</p>
+                                
+                                {!paymentSuccess && (
                                     <Card
                                         style={{
                                             width: "65%",
-                                            height: "92%",
+                                            height: "78%",
+                                            textAlign: "center",
+                                            margin: "0px 45px 0px auto",
+                                            borderRadius: 12,
+                                        }}
+                                    >
+                                        <h2 style={{ color: "#162b75", marginTop: "-5px" }}>
+                                            AUTHENTICATE
+                                        </h2>
+                                        <h2 style={{ color: "#162b75", marginTop: "-23px" }}>
+                                            YOUR ACCOUNT
+                                        </h2>
+                                        <div style={{ margin: "20px 0" }}>
+                                            <img src={napidLogo} alt="shield" width={55} />
+                                            <Paragraph
+                                                strong
+                                                style={{
+                                                    fontSize: 18,
+                                                    marginTop: 10,
+                                                    color: "#162b75",
+                                                    marginBottom: 0,
+                                                }}
+                                            >
+                                                +91 xxxxxx9283
+
+                                            </Paragraph>
+                                            {!verifed && !isIdSleeping ? <Checkbox className="custom-checkbox"
+                                                style={{ marginTop: '-18px' }}
+                                                checked={checked}
+                                                onChange={handleCheckboxChange}
+                                            >
+                                                <h5 size="small" style={{ color: 'red' }}>{statusMessage}</h5>
+                                            </Checkbox> : !isIdSleeping ?
+                                                <h5 style={{ color: 'green', marginTop: '0px', marginLeft: '-5px' }}>
+                                                    {statusMessage} <span style={{ marginLeft: '8px', color: 'red' }}>{timeCount}</span>
+                                                </h5> :
+                                                <><h5 style={{ color: 'red', marginTop: '0px', marginLeft: '12px' }}>
+                                                    {statusMessage}
+                                                </h5><h5 onClick={handleVerify} style={{ color: 'blue', marginTop: '-20px', marginLeft: '-25px', cursor: 'pointer', textDecoration: 'underline' }}>
+                                                        Awake & Recheck
+                                                    </h5></>}
+                                        </div>
+                                        <Button
+                                            type="primary"
+                                            onClick={() => {
+                                                setPaymentSuccess(true);
+                                                if (intervalRef.current) {
+                                                    clearInterval(intervalRef.current);
+                                                    intervalRef.current = null;
+                                                }
+                                                setChecked(false);
+                                                setVerifed(false);
+                                                setIsIdSleeping(false);
+                                                setStatusMessage("This is my number");
+                                                setTimeCount(30);
+                                            }}
+                                            shape="round"
+                                            style={{ width: "45%", fontSize: 18, fontWeight: 'bold', marginTop: '-30px', backgroundColor: (!verifed) ? "#bfbfbf" : "#162b75", color: (!verifed) ? '#595959' : "white" }}
+                                            size="middle"
+                                            disabled={!verifed}
+                                        >
+                                            Verify
+                                        </Button>
+                                    </Card>
+                                )}
+                                {paymentSuccess && (
+                                    <Card
+                                        style={{
+                                            width: "65%",
+                                            height: "75%",
                                             textAlign: "center",
                                             margin: "0px 45px 0px auto",
                                             borderRadius: 12,
@@ -279,22 +292,21 @@ const NapidPreAuthMFA = () => {
                                                 alt="NapID MFA Flow"
                                                 style={{ maxWidth: "80%", height: "auto" }} />
                                         </div>
+                                        <Button
+                                            onClick={() => setPaymentSuccess(false)}
+                                            style={{
+                                                marginTop: '20px',
+                                                width: "40%",
+                                                minWidth: 100,
+                                                color: 'white',
+                                                backgroundColor: '#162b75'
+                                            }}
+                                        >
+                                            Test Again
+                                        </Button>
                                     </Card>
-                                    <Button
-                                        onClick={() => setPaymentSuccess(false)}
-                                        style={{
-                                            marginTop: '20px',
-                                            width: "30%",
-                                            minWidth: 30,
-                                            color: 'white',
-                                            backgroundColor: '#162b75',
-                                            marginRight: '-65%'
-                                        }}
-                                    >
-                                        Test Again
-                                    </Button>
-                                </div>
-                            )}
+                                )}
+                            </div>
                         </Col>
                     </Row>
                 </Card>

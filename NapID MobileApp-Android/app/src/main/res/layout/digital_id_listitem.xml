@@ -59,20 +59,7 @@
                                 android:id="@+id/digital_id_name"
                                 android:textColor="@color/id_disabled"/>
 
-                            <!--<LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="@dimen/vendor_height"
-                                android:orientation="vertical">
-                                <ImageView
-                                    android:layout_width="@dimen/chip_size"
-                                    android:layout_height="@dimen/chip_size"
-                                    android:visibility="gone"
-                                    android:id="@+id/card_chip"
-                                    android:src="@drawable/chip"/>
-                                <Space
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/spacer_20"/>
-                            </LinearLayout>-->
+
 
 
 
@@ -172,21 +159,7 @@
                             android:textColor="@color/napid_white"
                             />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/opt_out_lnr"
-                            android:layout_weight="1"
-                            android:gravity="end">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Opt out"
-                                android:textColor="@color/napid_grey"
-                                android:textSize="@dimen/text_size_verysmall"
-                                android:id="@+id/opt_out"/>
 
-                        </LinearLayout>
 
 
                     </LinearLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BOBdemo</string>
+    <string name="app_name">NAPID_MFA_BOB</string>
     <string name="reg_str">Secure with</string>
     <string name="reg_shield">Anti-fraud shield</string>
     <string name="reg_str1">Select Mobile Number Linked \n To Your Bank</string>

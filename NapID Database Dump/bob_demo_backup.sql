@@ -38,7 +38,7 @@ CREATE TABLE `application_details` (
 
 LOCK TABLES `application_details` WRITE;
 /*!40000 ALTER TABLE `application_details` DISABLE KEYS */;
-INSERT INTO `application_details` VALUES (1,'NapId PRE-Auth MFA','8925079283',_binary '\0','8925079283'),(2,'Net Banking','kuloth',_binary '\0','8925079283'),(3,'UPI','kuloth@yyy',_binary '\0','8925079283'),(4,'Debit Card','12345678981',_binary '\0','8925079283'),(5,'Credit Card','876565654321',_binary '\0','8925079283');
+INSERT INTO `application_details` VALUES (1,'Mobile Number','8925079283',_binary '\0','8925079283'),(2,'Net Banking','user365',_binary '\0','8925079283'),(3,'UPI','41886797929',_binary '\0','8925079283'),(4,'Debit Card','12345678981',_binary '\0','8925079283'),(5,'Credit Card','876565654321',_binary '\0','8925079283');
 /*!40000 ALTER TABLE `application_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

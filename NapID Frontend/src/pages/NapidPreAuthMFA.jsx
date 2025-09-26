@@ -9,7 +9,7 @@ import tick from "../assets/tick.png";
 
 const { Title, Paragraph, Link } = Typography;
 
-const AntiFraudPayment = () => {
+const NapidPreAuthMFA = () => {
     const [checked, setChecked] = useState(false);
     const [paymentSuccess, setPaymentSuccess] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -35,18 +35,18 @@ const AntiFraudPayment = () => {
     const handleVerify = async () => {
         try {
             const response = await axios.get(
-                `http://192.168.0.109:8080/napid/v1/application/checkstatus/${mobileNumber}`
+                `${import.meta.env.VITE_API_BASE_URL}/napid/v1/application/checkstatus/${mobileNumber}`
             );
 
             if (response.data.isEnabled) {
                 setIsIdSleeping(false)
-                await axios.put("http://192.168.0.109:8080/napid/v1/application", {
+                await axios.put(`${import.meta.env.VITE_API_BASE_URL}/napid/v1/application`, {
                     id: mobileNumber,
                     isEnabled: false,
                 });
 
                 setVerifed(true);
-                setStatusMessage("Id is Awake");
+                setStatusMessage("Number is Awake");
                 let counter = 30;
                 intervalRef.current = setInterval(() => {
                     counter -= 1;
@@ -61,7 +61,7 @@ const AntiFraudPayment = () => {
                 }, 1000);
             } else {
                 setIsIdSleeping(true)
-                setStatusMessage("Id is Sleep, Awake");
+                setStatusMessage("Number is Sleep, Awake");
                 setVerifed(false);
             }
         } catch (error) {
@@ -92,18 +92,19 @@ const AntiFraudPayment = () => {
 
             <div
                 style={{
-                    minHeight: "90vh",
+                    minHeight: "100vh",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     background: "#f5f5f5",
-                    padding: "16px",
+                    // padding: "16px",
                 }}
             >
                 <Card
                     style={{
-                        width: "100%",
-                        maxWidth: 700,
+                        width: "80%",
+                        height: "100%",
+                        // maxWidth: 700,
                         borderRadius: 16,
                         overflow: "hidden",
                     }}
@@ -114,8 +115,8 @@ const AntiFraudPayment = () => {
                             xs={24}
                             sm={24}
                             md={12}
-                            lg={9}
-                            xl={9}
+                            lg={12}
+                            xl={12}
                             style={{
                                 background: "#fff",
                                 padding: "32px 20px",
@@ -127,18 +128,20 @@ const AntiFraudPayment = () => {
                             }}
                         >
                             <Title
-                                level={3}
+                                level={1}
                                 style={{
                                     marginBottom: 16,
+                                    marginLeft: 28,
                                     fontWeight: "bold",
                                 }}
                             >
-                                NapID PRE-AUTH <br /> MFA Screen <br /> (OTP Replacer)
+                                NapID PRE-AUTH MFA (OTP Replacer)
                             </Title>
                             <Paragraph
                                 style={{
-                                    fontSize: 16,
+                                    fontSize: 18,
                                     marginBottom: 24,
+                                    marginLeft: 28,
                                     color: "#162b75",
                                     fontWeight: "bold",
                                 }}
@@ -146,32 +149,36 @@ const AntiFraudPayment = () => {
                                 For Net Banking, Cards, NEFT, RTGS, IMPS Payments
                             </Paragraph>
                             <Title
-                                level={5}
+                                level={4}
                                 style={{
                                     color: "#fd7e14",
+                                    marginLeft: 28,
                                     marginBottom: 8,
                                     fontWeight: "bold",
                                 }}
                             >
                                 One-Touch Authenticator
                             </Title>
-                            <Link
+                            <Title
+                                level={4}
                                 style={{
                                     color: "#162b75",
+                                    marginLeft: 28,
                                     cursor: "pointer",
                                     fontWeight: "bold",
+                                    textDecoration: "underline",
                                 }}
                                 onClick={() => setIsModalVisible(true)}
                             >
                                 How it works ?
-                            </Link>
+                            </Title>
                         </Col>
                         <Col
                             xs={24}
                             sm={24}
                             md={12}
-                            lg={15}
-                            xl={15}
+                            lg={12}
+                            xl={12}
                             style={{
                                 background: "linear-gradient(120deg,rgb(253, 161, 41) 0%, #f26522 100%)",
                                 clipPath: "ellipse(95% 95% at 100% 35%)",
@@ -184,20 +191,19 @@ const AntiFraudPayment = () => {
                             {!paymentSuccess && (
                                 <Card
                                     style={{
-                                        width: "100%",
-                                        maxWidth: 270,
+                                        width: "65%",
+                                        height: "92%",
                                         textAlign: "center",
-                                        margin: "0 auto",
-                                        marginRight: "10px",
+                                        margin: "0px 45px 0px auto",
                                         borderRadius: 12,
                                     }}
                                 >
-                                    <h3 style={{ color: "#162b75", marginTop: "-5px" }}>
+                                    <h2 style={{ color: "#162b75", marginTop: "-5px" }}>
                                         AUTHENTICATE
-                                    </h3>
-                                    <h3 style={{ color: "#162b75", marginTop: "-23px" }}>
+                                    </h2>
+                                    <h2 style={{ color: "#162b75", marginTop: "-23px" }}>
                                         YOUR ACCOUNT
-                                    </h3>
+                                    </h2>
                                     <div style={{ margin: "20px 0" }}>
                                         <img src={napidLogo} alt="shield" width={55} />
                                         <Paragraph
@@ -212,7 +218,8 @@ const AntiFraudPayment = () => {
                                             +91 xxxxxx9283
 
                                         </Paragraph>
-                                        {!verifed && !isIdSleeping ? <Checkbox style={{ marginTop: '-18px' }}
+                                        {!verifed && !isIdSleeping ? <Checkbox className="custom-checkbox"
+                                            style={{ marginTop: '-18px' }}
                                             checked={checked}
                                             onChange={handleCheckboxChange}
                                         >
@@ -244,10 +251,9 @@ const AntiFraudPayment = () => {
                                             setTimeCount(30);
                                         }}
                                         shape="round"
-                                        style={{ width: "60%", marginTop: '-30px', backgroundColor: '#162b75' }}
+                                        style={{ width: "45%", fontSize: 18,fontWeight:'bold', marginTop: '-30px', backgroundColor: (!verifed) ? "#bfbfbf" : "#162b75" , color:(!verifed)?'#595959':"white"}}
                                         size="middle"
                                         disabled={!verifed}
-                                        icon={<CheckCircleOutlined />}
                                     >
                                         Verify
                                     </Button>
@@ -257,11 +263,10 @@ const AntiFraudPayment = () => {
                                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '100%' }}>
                                     <Card
                                         style={{
-                                            width: "100%",
-                                            maxWidth: 270,
+                                            width: "65%",
+                                            height: "92%",
                                             textAlign: "center",
-                                            margin: "0 auto",
-                                            marginRight: "10px",
+                                            margin: "0px 45px 0px auto",
                                             borderRadius: 12,
                                         }}>
                                         <h2 style={{ color: "#162b75" }}>PAYMENT</h2>
@@ -298,7 +303,7 @@ const AntiFraudPayment = () => {
                     open={isModalVisible}
                     onCancel={() => setIsModalVisible(false)}
                     footer={null}
-                    width={550}
+                    width={'60%'}
                     centered
                 >
                     <div>
@@ -312,4 +317,4 @@ const AntiFraudPayment = () => {
     );
 };
 
-export default AntiFraudPayment;
+export default NapidPreAuthMFA;

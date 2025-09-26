@@ -8,7 +8,7 @@ import tick from "../assets/tick.png";
 
 const { Title, Paragraph, Link } = Typography;
 
-const NapidPreAuthMFA = () => {
+const AntiFraudPayment = () => {
     const [checked, setChecked] = useState(false);
     const [paymentSuccess, setPaymentSuccess] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -51,12 +51,12 @@ const NapidPreAuthMFA = () => {
     const handleVerify = async () => {
         try {
             const response = await axios.get(
-                `http://192.168.0.109:8080/napid/v1/application/checkstatus/${userId}`
+                `${import.meta.env.VITE_API_BASE_URL}/napid/v1/application/checkstatus/${userId}`
             );
 
             if (response.data.isEnabled) {
                 setIsIdSleeping(false)
-                await axios.put("http://192.168.0.109:8080/napid/v1/application", {
+                await axios.put(`${import.meta.env.VITE_API_BASE_URL}/napid/v1/application`, {
                     id: userId,
                     isEnabled: false,
                 });
@@ -122,8 +122,8 @@ const NapidPreAuthMFA = () => {
             >
                 <Card
                     style={{
-                        width: "100%",
-                        maxWidth: 700,
+                        width: "80%",
+                        height: "100%",
                         borderRadius: 16,
                         overflow: "hidden",
                     }}
@@ -134,8 +134,8 @@ const NapidPreAuthMFA = () => {
                             xs={24}
                             sm={24}
                             md={12}
-                            lg={9}
-                            xl={9}
+                            lg={13}
+                            xl={13}
                             style={{
                                 background: "#fff",
                                 padding: "32px 20px",
@@ -147,27 +147,40 @@ const NapidPreAuthMFA = () => {
                             }}
                         >
                             <Title
-                                level={3}
+                                level={1}
                                 style={{
-                                    marginBottom: 16,
+                                    marginLeft: 28,
                                     fontWeight: "bold",
                                 }}
                             >
-                                NapID PRE-AUTH <br /> MFA Screen <br /> (OTP Replacer)
+                                NapID <br />Anti-Fraud Payment/Login
+                            </Title>
+                            <Title
+                                level={2}
+                                style={{
+                                    marginBottom: 16,
+                                    marginTop: '-10px',
+                                    marginLeft: 28,
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                (As First Factor Authentication)
                             </Title>
                             <Paragraph
                                 style={{
-                                    fontSize: 16,
+                                    fontSize: 18,
                                     marginBottom: 24,
+                                    marginLeft: 28,
                                     color: "#162b75",
                                     fontWeight: "bold",
                                 }}
                             >
-                                For Net Banking, Cards, NEFT, RTGS, IMPS Payments
+                                For Net Banking, Login & Payments
                             </Paragraph>
                             <Title
-                                level={5}
+                                level={4}
                                 style={{
+                                    marginLeft: 28,
                                     color: "#fd7e14",
                                     marginBottom: 8,
                                     fontWeight: "bold",
@@ -175,23 +188,40 @@ const NapidPreAuthMFA = () => {
                             >
                                 One-Touch Authenticator
                             </Title>
-                            <Link
+                            <Title
+                                level={4}
                                 style={{
                                     color: "#162b75",
                                     cursor: "pointer",
+                                    marginLeft: 28,
                                     fontWeight: "bold",
+                                    textDecoration: "underline",
                                 }}
                                 onClick={() => setIsModalVisible(true)}
                             >
                                 How it works ?
-                            </Link>
+                            </Title>
+                           {! paymentSuccess&&<div style={{
+                                marginLeft: 28,
+                            }}>
+                                <h3 style={{
+                                    textDecoration: "underline", fontSize: 18,
+
+                                }}>Demo Credentials</h3>
+                                <h3 style={{
+                                    marginTop: '-20px', fontSize: 18,
+                                }}>User Id : user365</h3>
+                                <h3 style={{
+                                    marginTop: '-20px', fontSize: 18,
+                                }}>Password: 12345</h3>
+                            </div>}
                         </Col>
                         <Col
                             xs={24}
                             sm={24}
                             md={12}
-                            lg={15}
-                            xl={15}
+                            lg={11}
+                            xl={11}
                             style={{
                                 background: "linear-gradient(120deg,rgb(253, 161, 41) 0%, #f26522 100%)",
                                 clipPath: "ellipse(95% 95% at 100% 35%)",
@@ -205,11 +235,10 @@ const NapidPreAuthMFA = () => {
                                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '100%' }}>
                                     <Card
                                         style={{
-                                            width: "100%",
-                                            maxWidth: 270,
+                                            width: "65%",
+                                            height: "85%",
                                             textAlign: "center",
-                                            margin: "0 auto",
-                                            marginRight: "10px",
+                                            margin: "0px 45px 0px auto",
                                             borderRadius: 12,
                                         }}>
                                         <h2 style={{ color: "#162b75" }}>PAYMENT</h2>
@@ -243,19 +272,18 @@ const NapidPreAuthMFA = () => {
                                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: '100%' }}>
                                     <Card
                                         style={{
-                                            width: "100%",
-                                            maxWidth: 270,
+                                            width: "65%",
+                                            height: "95%",
                                             textAlign: "center",
-                                            margin: "0 auto",
-                                            marginRight: "10px",
+                                            margin: "0px 45px 0px auto",
                                             borderRadius: 12,
                                         }}>
-                                        <h3 style={{ color: "#162b75", marginTop: "-5px" }}>
+                                        <h2 style={{ color: "#162b75", marginTop: "-5px" }}>
                                             AUTHENTICATE
-                                        </h3>
-                                        <h3 style={{ color: "#162b75", marginTop: "-23px" }}>
+                                        </h2>
+                                        <h2 style={{ color: "#162b75", marginTop: "-23px" }}>
                                             YOUR ACCOUNT
-                                        </h3>
+                                        </h2>
                                         <div style={{ margin: "20px 0" }}>
                                             <img src={napidLogo} alt="shield" width={55} />
                                             <Form
@@ -282,6 +310,7 @@ const NapidPreAuthMFA = () => {
                                                 <div style={{ textAlign: 'left', marginBottom: '0px', minHeight: '40px' }}>
                                                     {!verifed && !isIdSleeping ?
                                                         <Checkbox
+                                                            className="custom-checkbox"
                                                             checked={checked}
                                                             onChange={handleCheckboxChange}
                                                         >
@@ -319,8 +348,11 @@ const NapidPreAuthMFA = () => {
                                                         style={{
                                                             width: "30%",
                                                             color: "white",
+                                                            fontWeight: "bold",
                                                             backgroundColor: (!verifed) ? "#bfbfbf" : "#162b75",
                                                             marginTop: "0px",
+                                                            color: (!verifed) ? '#595959' : "white",
+                                                            fontSize: 18
                                                         }}
                                                         htmlType="submit"
                                                         block
@@ -329,7 +361,6 @@ const NapidPreAuthMFA = () => {
                                                     </Button>
                                                 </Form.Item>
                                             </Form>
-
                                         </div>
                                     </Card>
                                 </div>
@@ -343,7 +374,7 @@ const NapidPreAuthMFA = () => {
                     open={isModalVisible}
                     onCancel={() => setIsModalVisible(false)}
                     footer={null}
-                    width={550}
+                    width={'60%'}
                     centered
                 >
                     <div>
@@ -358,4 +389,4 @@ const NapidPreAuthMFA = () => {
     );
 };
 
-export default NapidPreAuthMFA;
+export default AntiFraudPayment;

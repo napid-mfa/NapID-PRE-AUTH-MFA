@@ -13,16 +13,14 @@ function Dashboard() {
     const applications = [
         {
             id: 1,
-            title: "Napid PreAuth MFA",
-            // description: "Multi-factor authentication for enhanced security",
+            title: "NapId Pre-Auth MFA",
             icon: <SafetyCertificateOutlined style={{ fontSize: 24 }} />,
             route: "/napid-preauth-mfa",
             gradient: "linear-gradient(135deg,rgb(253, 161, 41),  #f26522)",
         },
         {
             id: 2,
-            title: "Antifraud Payment/Login",
-            // description: "Anti-fraud payment system for secure transactions",
+            title: "Anti-Fraud Payment/Login",
             icon: <SafetyCertificateOutlined style={{ fontSize: 24 }} />,
             route: "/antifraud-payment",
             gradient: "linear-gradient(135deg,rgb(253, 161, 41), #f26522)",
@@ -33,7 +31,7 @@ function Dashboard() {
 
     const AppCard = ({ app }) => (
         <Card
-            onClick={() => { navigate(app.route) }}
+            onClick={() => window.open(app.route, "_blank")}
             hoverable
             style={{
                 borderRadius: 16,
@@ -58,15 +56,12 @@ function Dashboard() {
                 </Title>
             </div>
             <div style={{ padding: 20 }}>
-                {/* <Text style={{ display: "block", marginBottom: 16 }}>
-                    {app.description}
-                </Text> */}
                 <Button
                     type="primary"
                     block
-                    style={{ borderRadius: 8, backgroundColor: '#162b75', color: 'white' }}
+                    style={{ borderRadius: 8,marginLeft:'35%', backgroundColor: '#162b75', color: 'white', width:'30%' }}
                 >
-                    Open Application
+                    Demo
                 </Button>
             </div>
         </Card>
